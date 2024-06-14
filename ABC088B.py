@@ -1,4 +1,5 @@
 # ABC088B - Card Game for Two
+# test
 
 card_num = int(input())
 card_list = sorted(map(int, input().split()), reverse=True)
