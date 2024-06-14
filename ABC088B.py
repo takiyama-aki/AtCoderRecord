@@ -8,7 +8,6 @@ bobPoint = 0
 flg = True # True: alice's turn, False: bob's turn
 
 for i in range(card_num):
-
     if flg:
         alicePoint += card_list.pop(0)
         flg = False
