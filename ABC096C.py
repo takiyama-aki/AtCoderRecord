@@ -4,7 +4,6 @@ canvas = [list(input()) for _ in range(height)]
 
 # 黒色の上下左右が白色の絵は描けない
 
-ok_flg = True
 # 1マスずつ見ていく
 for y in range(height):
     for x in range(width):
@@ -17,6 +16,10 @@ for y in range(height):
                 for dy in range(-1,2):
                     if dx == 0 and dy == 0:
                         continue
+                    if dx == 1 and dy == 1:
+                        continue
+                    if dx == -1 and dy == -1:
+                        continue
 
                     # 左右
                     xx = x + dx
@@ -24,11 +27,14 @@ for y in range(height):
                     yy = y + dy
 
                     if xx >= 0 and xx < width and yy >= 0 and yy < height:
-                        if xx == "#" or yy == "#":
+                        #print("yy = y",dy,"[",canvas[yy][xx], "], xx = x",dx, "[", canvas[yy][xx],"]")
+                        if canvas[yy][xx] == "#" or canvas[yy][xx] == "#":
+                            #print("good")
                             # この黒マスはok
                             count += 1
                     
             if count == 0:
+                #print(y, x)
                 print("No")
                 exit()
 
