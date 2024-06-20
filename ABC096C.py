@@ -20,6 +20,10 @@ for y in range(height):
                         continue
                     if dx == -1 and dy == -1:
                         continue
+                    if dx == 1 and dy == -1:
+                        continue
+                    if dx == -1 and dy == 1:
+                        continue
 
                     # 左右
                     xx = x + dx
